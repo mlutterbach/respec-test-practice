@@ -12,19 +12,10 @@ def subdivide(arr, num)
   # push index 2 numb into 3rd array
   # add num to index
   # push that into same index
-  p arr
-
-
-  # add_index = num
-  # result = []
-  # arr.each_with_index.select do |value, index|
-  #   # p "#{counter_index} hello counter"
-  #   p index
-  #   p value
-  #   p result
-  #   if add_index <= arr.size
-  #     result << value[index + add_index]
-  #   end
-  #   add_index += num
-  # end
+  array = []
+  num_arr = (1..num).to_a
+  num_arr.each do |n|
+    array << (0... arr.length).select{ |x| x % num == (num - n) }.map { |y| arr[y] }
+  end
+  return array.reverse
 end
