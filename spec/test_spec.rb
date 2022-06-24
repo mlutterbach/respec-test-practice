@@ -21,4 +21,9 @@ describe "#subdivide" do
       [['a', 'c'],
       ['b', 'd']])
   end
+  it "subdivide the array, into multiple arrays given a number" do
+    expect(subdivide(['a', 'b', 'c', 'd', 'e'], 2)).to eql(
+      [['a', 'c', 'e'],
+      ['b', 'd']])
+  end
 end

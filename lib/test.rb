@@ -6,12 +6,6 @@ def suma_factorial(n)
 end
 
 def subdivide(arr, num)
-  # take array and divide into equal parts
-  # push index 0 numb into first array
-  # push index 1 numb into second array
-  # push index 2 numb into 3rd array
-  # add num to index
-  # push that into same index
   array = []
   num_arr = (1..num).to_a
   num_arr.each do |n|
