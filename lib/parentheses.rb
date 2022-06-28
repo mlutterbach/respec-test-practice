@@ -12,24 +12,19 @@ def parentheses_counter(string)
     return false if open < 0
   end
   open == 0
+
+  # return true if string.empty?
+
   # array = string.split('')
-  # return true if array.empty?
   # pos_left_par = array.find_index { |e| e == '(' } || 0
   # pos_right_par = array.find_index { |e| e == ')' } || 0
 
-  # if pos_right_par < pos_left_par
-  #   a = false
-  # else
-  #   parenthese_hash = Hash.new(0)
-  #     array.each do |elem|
-  #       parenthese_hash[elem] += 1
-  #       return false if parenthese_hash[')'] > parenthese_hash['(']
-  #     end
-  #   if parenthese_hash['('] == parenthese_hash[')']
-  #     a = true
-  #   else
-  #     a = false
-  #   end
+  # return false if pos_right_par < pos_left_par
+
+  # parenthese_hash = Hash.new(0)
+  # array.each do |elem|
+  #   parenthese_hash[elem] += 1
+  #   return false if parenthese_hash[')'] > parenthese_hash['(']
   # end
-  # a
+  # parenthese_hash['('] == parenthese_hash[')']
 end
