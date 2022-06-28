@@ -7,44 +7,13 @@ def parse_int(string)
   multi = { 'hundred' => 100, 'thousand' => 1000, 'million' => 1000000}
 
   sum = 0
-  string.split(/ |-/).each do |word|
-    if digits[word]
-      p sum += digits[word]
+  string.split(/ |-/).each do |num|
+    if digits[num]
+      sum += digits[num]
     end
-    if multi[word]
-      p sum += multi[word] * (sum % multi[word]) - (sum % multi[word])
+    if multi[num]
+      sum += multi[num] * (sum % multi[num]) - (sum % multi[num])
     end
   end
   return sum
 end
-    #array_num << digits[word]
-      ##array_num[0] = sum
-      # if word == "hundred" || word == "thousand"
-      #   (0...(index-1)).map do |i|
-      #     sum = array_num[0...(index-1)].reduce(:+)
-      #     p "sum: #{sum}"
-      #     p array_num
-      #   end
-      #   sum = array_num.reduce(:*)
-      #   p sum
-      #   array_num.clear
-      #   array_num << sum
-      #   p "This is array #{array_num}"
-      # end
-  #   if word == 'thousand'
-  #     p array_num
-  #     p sum =  array_num.reduce(:+) * multi[word]
-  #     array_num.clear
-  #     new_arr << sum
-  #   end
-  #   if word == 'hundred'
-  #     p array_num
-  #     p sum = array_num.reduce(:+) * multi[word]
-  #     array_num[index - 1] = sum
-  #   end
-  # end
-  # sum = array_num.reduce(:+)
-  # p new_arr
-  # p array_num
-
-  # p new_arr = string.split(/(thousand|hundred)/).collect(&:strip)
