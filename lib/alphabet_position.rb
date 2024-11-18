@@ -9,3 +9,7 @@ def alphabet_position(text)
   end
   result.join(" ")
 end
+
+def alphabet_position2(text)
+  text.downcase.scan(/[a-z]/).map { |char| char.ord - 'a'.ord + 1 }.join(" ")
+end
