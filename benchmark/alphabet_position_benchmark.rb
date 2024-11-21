@@ -12,16 +12,21 @@ def alphabet_position2(text)
   text.downcase.scan(/[a-z]/).map { |char| char.ord - 'a'.ord + 1 }.join(" ")
 end
 
-test_string = "The sunset sets at twelve o' clock."
-
-iterations = 100_000
+test_strings = [
+  "a",
+  "The quick brown fox jumps over the lazy dog",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "a" * 1_000
+]
 
 Benchmark.bm do |x|
-  x.report('alphabet_position:') do
-    iterations.times { alphabet_position(test_string) }
-  end
+  test_strings.each do |test_string|
+    x.report("alphabet_position (#{test_string.length} chars):") do
+      100.times { alphabet_position(test_string) }
+    end
 
-  x.report('alphabet_position2:') do
-    iterations.times { alphabet_position2(test_string) }
+    x.report("alphabet_position2 (#{test_string.length} chars):") do
+      100.times { alphabet_position2(test_string) }
+    end
   end
 end
