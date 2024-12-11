@@ -16,3 +16,7 @@ def increment_string(input)
 
   prefix + incremented_number
 end
+
+def increment_string_2(input)
+  input.sub(/\d*$/) { |n| n.empty? ? 1 : n.succ }
+end
