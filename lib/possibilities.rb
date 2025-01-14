@@ -2,7 +2,7 @@
 
 # Return an array containing all the possibilities you can reach substituing the ? for a value.
 
-def possibilities(string)
+def iterative_wildcard_possibilities(string)
   possibilities = [string]
 
   while possibilities.any? { |str| str.include?("?") }
@@ -15,4 +15,11 @@ def possibilities(string)
     end
   end
   possibilities
+end
+
+
+def recursive_wildcard_possibilities(input)
+  return [input] unless input.include?('?')
+
+  recursive_wildcard_possibilities(input.sub('?', '0')) + recursive_wildcard_possibilities(input.sub('?', '1'))
 end
